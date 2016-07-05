@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-aria/angular-aria.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.js"></script>
+  <script src="node_modules/angular-material/angular-material.js"></script>
+
+  <script src="scripts/app.js"></script>
+  <script src="components/mortgage-calculator.ctr.js"></script>
+</head>
+
+<body ng-app="ngMortgageCalculator" ng-controller="mortgageCalculator">
+  <div layout="column" layout-align="start center">
+    <h1>Calculator</h1>
+    <md-content layout-padding flex="70">
+      <md-input-container>
+        <label for="salesPrice">Sales Price</label>
+        <input id="salesPrice" type="text" ng-model="SalesPrice" md-autofocus></input>
+      </md-input-container>
+    </md-content>
+  </div>
+</body>
+
+</html>
