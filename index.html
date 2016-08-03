@@ -1,28 +1,65 @@
 <!doctype html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
 
-  <script src="node_modules/angular/angular.js"></script>
-  <script src="node_modules/angular-aria/angular-aria.js"></script>
-  <script src="node_modules/angular-animate/angular-animate.js"></script>
-  <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
 
-  <script src="scripts/app.js"></script>
-  <script src="components/mortgage-calculator.ctr.js"></script>
-</head>
+    <script src="scripts/app.js"></script>
+    <script src="components/mortgage-calculator.ctr.js"></script>
+  </head>
 
-<body ng-app="ngMortgageCalculator" ng-controller="mortgageCalculator">
-  <div layout="column" layout-align="start center">
-    <h1>Calculator</h1>
-    <md-content layout-padding flex="70">
-      <md-input-container>
-        <label for="salesPrice">Sales Price</label>
-        <input id="salesPrice" type="text" ng-model="SalesPrice" md-autofocus></input>
-      </md-input-container>
-    </md-content>
-  </div>
-</body>
+  <body ng-app="ngMortgageCalculator" ng-controller="mortgageCalculator">
+    <div layout="column" layout-align="center center">
+      <md-toolbar flex>Calculator</md-toolbar>
+      <section>
+        <md-content>
+          <md-input-container>
+            <label for="salesPrice">Sales Price</label>
+            <input id="salesPrice" type="text" ng-model="SalesPrice" md-autofocus style="width: 300px;"></input>
+          </md-input-container>
+        </md-content>
+        <md-content>
+          <md-input-container flex="25">
+            <label for="downPaymentPercentage">Down Payment Percentage</label>
+            <input id="downPaymentPercentage" type="text" ng-model="DownPaymentPerentage" md-autofocus></input>
+          </md-input-container>
+          <md-input-container flex>
+            <label for="downPaymentAmount">Down Payment Amount</label>
+            <input id="downPaymentAmount" type="text" ng-model="DownPaymentAmount" md-autofocus></input>
+          </md-input-container>
+        </md-content>
+        <md-content>
+          <md-input-container>
+            <label for="loanAmount">Loan Amount</label>
+            <input id="loanAmount" type="text" ng-model="LoanAmount" md-autofocus></input>
+          </md-input-container>
+        </md-content>
+        <md-content>
+          <md-input-container>
+            <label for="otherCosts">Other Costs</label>
+            <input id="otherCosts" type="text" ng-model="OtherCosts" md-autofocus></input>
+          </md-input-container>
+        </md-content>
+        <md-content>
+          <md-input-container flex="25">
+            <label for="interestRate">Interest Rate</label>
+            <input id="interestRate" type="text" ng-model="InterestRate" md-autofocus></input>
+          </md-input-container>
+          <md-input-container flex>
+            <label for="loanTerm">Loan Term</label>
+            <md-select id="loanTerm" ng-model="loanTerm" md-autofocus>
+              <md-option ng-repeat="term in terms" value=""></md-option>
+            </md-select>
+          </md-input-container>
+        </md-content>
+      </section>
+    </div>
+  </body>
 
 </html>
