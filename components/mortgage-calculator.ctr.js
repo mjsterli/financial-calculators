@@ -1,6 +1,12 @@
 angular
   .module('ngMortgageCalculator')
-  .controller('mortgageCalculator', function($scope){
+  .controller('mortgageCalculatorCtrl', '$log', function( $scope ){
+
+    $scope.ddp = function(){
+      $log.console( "I ma here");
+      return $scope.downPaymentAmount / 2;
+    };
+
     $scope.salesPrice = 100000;
     $scope.downPaymentPercentage = 20;
     $scope.downPaymentAmount = 20000;

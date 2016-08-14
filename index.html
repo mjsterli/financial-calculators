@@ -15,24 +15,24 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
 
-  <body ng-app="ngMortgageCalculator" ng-controller="mortgageCalculator">
+  <body ng-app="ngMortgageCalculator" ng-controller="mortgageCalculatorCtrl">
     <div layout="column" layout-align="center center">
       <section>
         <md-toolbar flex layout-align="center center">Mortgage Calculator</md-toolbar>
         <md-content>
           <md-input-container>
             <label for="salesPrice">Sales Price</label>
-            <input id="salesPrice" type="text" ng-model="salesPrice" md-autofocus style="width: 300px;"></input>
+            <input id="salesPrice" type="text" ng-model="salesPrice" md-autofocus style="width: 300px;" ng-change="calculate($event)"></input>
           </md-input-container>
         </md-content>
         <md-content>
           <md-input-container flex="25">
             <label for="downPaymentPercentage">Down Payment Percentage</label>
-            <input id="downPaymentPercentage" type="text" ng-model="downPaymentPercentage" md-autofocus></input>
+            <input id="downPaymentPercentage" type="text" ng-model="downPaymentPercentage" md-autofocus value="{{ddp()}}"></input>
           </md-input-container>
           <md-input-container flex>
             <label for="downPaymentAmount">Down Payment Amount</label>
-            <input id="downPaymentAmount" type="text" ng-model="downPaymentAmount" md-autofocus></input>
+            <input id="downPaymentAmount" type="text" ng-model="downPaymentAmount" md-autofocus ng-change="calculate($event)"></input>
           </md-input-container>
         </md-content>
         <md-content>
